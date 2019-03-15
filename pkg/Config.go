@@ -10,6 +10,7 @@ import (
 
 type Config struct {
 	App map[string]string
+	Log map[string]map[string]string
 	DataSource map[string]string
 	All map[string]string
 }
@@ -19,6 +20,7 @@ func (cfg *Config) Parse(path string) {
 	//  read config file
 	cfg.All = make(map[string]string)
 	cfg.App = make(map[string]string)
+	cfg.Log = make(map[string]map[string]string)
 	fi, err := os.Open(path)
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
@@ -48,9 +50,18 @@ func (cfg *Config) Parse(path string) {
 	for k, v := range cfg.All {
 		if strings.Index(k, "app.") == 0 {
 			tmp := strings.TrimPrefix(k, "app.")
-			cfg.App[tmp] = v
+			tmp = strings.Trim(tmp," ")
+			cfg.App[tmp] = strings.Trim(v," ")
+		}
+		if strings.Index(k, "log.") == 0 {
+			var lg = strings.Split(k, ".")
+			if nil == cfg.Log[lg[1]] {
+				cfg.Log[lg[1]] = make(map[string]string)
+			}
+			cfg.Log[lg[1]][strings.Trim(lg[2]," ")] = strings.Trim(v, " ")
 		}
 	}
+
 }
 
 var _cfg *Config = nil
