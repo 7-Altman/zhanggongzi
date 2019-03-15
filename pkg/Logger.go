@@ -90,6 +90,9 @@ func Info(format string, args ...interface{}) {
 	xlog.SetLevel(logrus.InfoLevel)
 	xlog.Info(format, args)
 }
+func InfoWithFields(msg string, fields map[string]interface{})  {
+	xlog.WithFields(fields).Info(msg)
+}
 
 // Error send log error to logstash
 func Error(format string, args ...interface{}) {

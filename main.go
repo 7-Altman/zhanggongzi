@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"zhanggongzi/gateway"
 )
 
@@ -15,5 +16,5 @@ func main()  {
 	} else {
 		fmt.Println("xxx")
 	}
-
+	os.Exit(1)
 }

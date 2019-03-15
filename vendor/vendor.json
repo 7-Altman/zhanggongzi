@@ -1,0 +1,51 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "Aulh7C5SVOA4Jzt5eHNH6197Mbk=",
+			"path": "github.com/konsorten/go-windows-terminal-sequences",
+			"revision": "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e",
+			"revisionTime": "2019-02-26T22:47:05Z"
+		},
+		{
+			"path": "github.com/lestrrat/go-file-rotatelog",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "D5jVUTl7HrJrdH95IxfLeSZifKQ=",
+			"path": "github.com/lestrrat/go-file-rotatelogs",
+			"revision": "d3151e2a480fdcd05fb97102f5310a47d96274c4",
+			"revisionTime": "2018-02-23T00:06:17Z"
+		},
+		{
+			"checksumSHA1": "VFdd7/gnXSPEQqUMSI9ufakRMnI=",
+			"path": "github.com/lestrrat/go-strftime",
+			"revision": "ba3bf9c1d0421aa146564a632931730344f1f9f1",
+			"revisionTime": "2018-02-20T04:22:22Z"
+		},
+		{
+			"checksumSHA1": "I7hloldMJZTqUx6hbVDp5nk9fZQ=",
+			"path": "github.com/pkg/errors",
+			"revision": "27936f6d90f9c8e1145f11ed52ffffbfdb9e0af7",
+			"revisionTime": "2019-02-27T00:00:51Z"
+		},
+		{
+			"checksumSHA1": "H/uL3j4L8U+//7NvzC+j5y8aaH4=",
+			"path": "github.com/rifflock/lfshook",
+			"revision": "b9218ef580f59a2e72dad1aa33d660150445d05a",
+			"revisionTime": "2018-09-20T16:41:30Z"
+		},
+		{
+			"checksumSHA1": "mDNBjIi/nvEt2poJ+qdeyosk/IM=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "dae0fa8d5b0c810a8ab733fbd5510c7cae84eca4",
+			"revisionTime": "2019-03-11T16:20:41Z"
+		},
+		{
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": ""
+		}
+	],
+	"rootPath": "zhanggongzi"
+}

@@ -27,9 +27,15 @@ func (hq *HttpRequest) RegisterServers() error {
 }
 
 func DealRequest(w http.ResponseWriter, r *http.Request) {
-	Info("xxxxx")
+	if string(r.URL.Path) == "/favicon.ico" {
+		return
+	}
 	//writer.Write([]byte(request.URL.Query()))
 	//info := fmt.Sprintln(r.Header.Get("Content-Type"))
+	fields := make(map[string]interface{})
+	fields["url"] = r.URL
+	fields["request-header"] = r.Header
+	InfoWithFields("request-info",fields)
 	len := r.ContentLength
 	body := make([]byte, len)
 	r.Body.Read(body)
