@@ -27,8 +27,6 @@ func (hq *HttpRequest) RegisterServers() error {
 }
 
 func DealRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.RequestURI)
-	fmt.Println(GetCfg())
 	Info("xxxxx")
 	//writer.Write([]byte(request.URL.Query()))
 	//info := fmt.Sprintln(r.Header.Get("Content-Type"))

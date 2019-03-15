@@ -1,7 +1,6 @@
 package gateway
 
 import (
-	"fmt"
 	"zhanggongzi/pkg"
 )
 
@@ -16,8 +15,6 @@ type GTClient struct {
 func (gtc *GTClient) Run() error {
 	// load default config
 	gtc.parse(DEFAULTCONFIG)
-	cfg := pkg.GetCfg()
-	fmt.Println(cfg)
 
 	//
 	server := new(pkg.HttpRequest)

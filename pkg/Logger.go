@@ -1,7 +1,6 @@
 package pkg
 
 import (
-	"fmt"
 	"github.com/lestrrat/go-file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
@@ -15,7 +14,6 @@ var xlog = logrus.New()
 //Init is Initial log config .
 func init() {
 	// load config
-	fmt.Println("x-------init---------")
 	cfg := GetCfg()
 	var (
 		writerD io.Writer
@@ -30,10 +28,8 @@ func init() {
 		cfg.Parse("./config/app.properties")
 		SetCfg(cfg)
 	}
-	fmt.Println("cfg------", cfg)
 
 	for k, v := range cfg.Log {
-		fmt.Println(k)
 		switch k {
 		case "default":
 			var (
@@ -64,7 +60,7 @@ func init() {
 			rotationTimeE, _ = strconv.Atoi(v["rotationTime"])
 			if v["switch"] == "true" {
 				writerE, _ = rotatelogs.New(
-					"./info-"+"%Y-%m-%d.log",
+					"./error-"+"%Y-%m-%d.log",
 					//baseLogPaht+".%Y%m%d",
 					rotatelogs.WithMaxAge(time.Duration(maxAgeE)*24*time.Hour),             // 文件最大保存时间
 					rotatelogs.WithRotationTime(time.Duration(rotationTimeE)*24*time.Hour), // 日志切割时间间隔
